@@ -2,6 +2,13 @@ require 'pry'
 
 puts "Here we go\n\n"
 
-result = exec("./lib/pickle.py")
-puts "get here"
-binding.pry
+while(1) do
+  result = system("./pickle.py josue")
+
+  puts "\n\n******FULL CONVERSATION*******\n"
+  File.open('josue-robot1', 'r') do |f|
+    f.each_line do |line|
+      puts line
+    end
+  end
+end
